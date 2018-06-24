@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7fde38b7fd8781345841963fc010ad46
+timeCreated: 1528569488
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - batteryPrefab: {fileID: 100000, guid: 89a136b5ca2156b4bbf8b3f3a7cc5645, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
