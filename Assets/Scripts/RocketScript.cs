@@ -17,7 +17,7 @@ public class RocketScript : MonoBehaviour
     private void OnMouseDown()
     {
         int count = int.Parse(countText.text);
-        if (count >= 5000)
+        if (count >= 1000)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

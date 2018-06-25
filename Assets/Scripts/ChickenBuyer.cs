@@ -11,6 +11,7 @@ public class ChickenBuyer : MonoBehaviour {
     public GameObject batteryPrefab;
     public LayerMask mask;
     public int chickenCost;
+	public AudioClip chickenAudioCLip;
 
     private bool CanBuyChicken;
     private Vector3 Spawn;
@@ -39,12 +40,12 @@ public class ChickenBuyer : MonoBehaviour {
     {
         GameObject clone = Instantiate(chickenPrefab, Spawn, Quaternion.identity);
         clone.transform.parent = chickenFolder.transform;
-        clone.layer = mask;
 
         clone.transform.position = Spawn;
         clone.transform.localScale = new Vector3(45f, 45f, 45f);
         clone.transform.localEulerAngles = new Vector3(0, 0, 0);
         clone.name = "Chicken";
+		clone.layer = LayerMask.NameToLayer("Chickens");
 
         SphereCollider sphereCollider = clone.AddComponent<SphereCollider>() as SphereCollider;
         Rigidbody rigidBody = clone.AddComponent<Rigidbody>() as Rigidbody;
@@ -76,5 +77,11 @@ public class ChickenBuyer : MonoBehaviour {
         batterySource.speed = 2f;
         batterySource.velocity = 0.5f;
         batterySource.layingPercentage = 0.4f;
+
+		AudioSource audioSource = clone.AddComponent<AudioSource>() as AudioSource;
+		audioSource.spatialBlend = 1f;
+		audioSource.clip = chickenAudioCLip;
+		audioSource.loop = true;
+		audioSource.Play ();
     }
 }
